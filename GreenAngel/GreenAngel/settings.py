@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'app_users',
     'social.apps.django_app.default',
+    'actions'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,6 +59,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.contrib.messages.context_processors.messages',
     'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
 )
 
 ROOT_URLCONF = 'GreenAngel.urls'
@@ -106,20 +108,20 @@ MASTER_PASSWORD = "GreenAngel"
 LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
 LOGIN_REDIRECT_URL = '/'
-
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/login/'
+SOCIAL_AUTH_LOGIN_URL = '/'
 
 # login backends
 AUTHENTICATION_BACKENDS = (
     'social.backends.yammer.YammerOAuth2',
-    'social.backends.google.GoogleOAuth2',
     'social.backends.twitter.TwitterOAuth',
     'social.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
-SOCIAL_AUTH_FACEBOOK_KEY = ''
-SOCIAL_AUTH_FACEBOOK_SECRET = ''
+SOCIAL_AUTH_FACEBOOK_KEY = '994905123887977'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'ff07bb9afcd96832b8cef403122a618c'
 
 SOCIAL_AUTH_TWITTER_KEY = ''
 SOCIAL_AUTH_TWITTER_SECRET = ''
@@ -127,5 +129,10 @@ SOCIAL_AUTH_TWITTER_SECRET = ''
 SOCIAL_AUTH_YAMMER_KEY = 'x3tK8IMbZKEgOGugZmvw'
 SOCIAL_AUTH_YAMMER_SECRET = '346ZkZXHt4v69GvHRvVGl33xzfGMCgPt9D3QlnY5A'
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
+# SOCIAL_AUTH_GOOGLE_PLUS_KEY = '168351584349-e7arjr2tuuivj39r7vr3eqh6ktcejvbd.apps.googleusercontent.com'
+# SOCIAL_AUTH_GOOGLE_PLUS_SECRET = 'Nr-lEip9QBQ5oJA_EhWs0Snm'
+# SOCIAL_AUTH_GOOGLE_PLUS_SCOPE = [
+#     'https://www.googleapis.com/auth/plus.login',
+#     'https://www.googleapis.com/auth/userinfo.email',
+#     'https://www.googleapis.com/auth/userinfo.profile'
+# ]
