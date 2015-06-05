@@ -56,4 +56,4 @@ def home(request):
     """
     home view
     """
-    return HttpResponse('this is home')
+    return render(request, 'app_users/home.html', locals())
