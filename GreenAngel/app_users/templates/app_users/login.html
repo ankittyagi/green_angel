@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<a name="yammer" href="/login/yammer/">
+  Sign in with Yammer
+</a>
+<a name="google" href="/login/google/">
+  Sign in with Google
+</a>
+<a name="facebook" href="/login/facebook/">
+  Sign in with Facebook
+</a>
+
+<form action="." method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Login">
+</form>
