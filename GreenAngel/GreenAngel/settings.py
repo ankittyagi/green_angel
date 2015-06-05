@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'app_users',
     'social.apps.django_app.default',
-    'actions'
+    'actions',
+    'widget_tweaks'
 )
 
 MIDDLEWARE_CLASSES = (
