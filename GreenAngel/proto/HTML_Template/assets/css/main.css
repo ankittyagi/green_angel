@@ -240,7 +240,7 @@ img {
 /* Header Section End */
 /* Works Section Start */
 #works {
-  background: #ffffff;
+  background-image: url(../img/work/egg_shell.jpg);
   width: 100%;
 }
 #works .grid-left .large {
