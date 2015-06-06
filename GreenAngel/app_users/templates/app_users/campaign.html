@@ -3,13 +3,13 @@
 {% block breadcrumb %}Campaigns{% endblock breadcrumb %}
 
 {% block nav %}
-<li>
+<li class='highlight'>
 	<a href='/dashboard'>
 		<div class="fs1" aria-hidden="true" data-icon="&#xe007;"></div>
 		<span>Dashboard</span>
 	</a>
 </li>
-<li class='highlight'>
+<li>
 	<a href='/campaign'>
 		<div class="fs1" aria-hidden="true" data-icon="&#xe0f8;"></div>
 		<span>All Campaigns</span>
@@ -22,9 +22,15 @@
 	</a>
 </li>
 <li>
-	<a href='gallery.html'>
+	<a href='/myplantation'>
 		<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
-		<span>My Earnings</span>
+		<span>My Plantation</span>
+	</a>
+</li>
+<li>
+	<a href='/mypoints'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+		<span>My Points</span>
 	</a>
 </li>
 <hr>
@@ -66,16 +72,3 @@
 <!-- Row end -->
 
 {% endblock body %}
-
-{% block extrajs %}
-<script type="text/javascript">
-	var joinCampaign = function(camid) {
-		    console.log('reached here');
-		    console.log(camid);
-		    $.get('/campaign/'+camid+'/join',function(resp){
-		        $('#joincampaignmodal .modal-body').html(resp);
-		        $('#joincampaignmodal').modal('show');
-		    })
-	}
-</script>
-{% endblock extrajs %}

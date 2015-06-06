@@ -21,14 +21,12 @@
 			if ($(this).val()) {
 				$('#imgUploader').prop("disabled", false);
 				$('#imgUploadStatus').text("Click on Start Uploading to submit.");
-				console.log($(this).val());
 			} else {
 				$('#imgUploader').prop("disabled", "disabled");				
 			}
 		})
 
 		$('#imgUploader').on('click', function(){
-			console.log('image upload called');
 	        $("#imgUploadStatus").text('Uploading...');
 	        var f =$('#id_photo')[0].files[0];
 	        var formData = new FormData();

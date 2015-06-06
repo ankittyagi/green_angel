@@ -63,9 +63,15 @@
 						</a>
 					</li>
 					<li>
-						<a href='gallery.html'>
+						<a href='/myplantation'>
 							<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
-							<span>My Earnings</span>
+							<span>My Plantation</span>
+						</a>
+					</li>
+					<li>
+						<a href='/mypoints'>
+							<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+							<span>My Points</span>
 						</a>
 					</li>
 					<hr>
@@ -178,6 +184,18 @@
 		            }
 		        }
 		    });
+		    var joinCampaign = function(camid) {
+			    $.get('/campaign/'+camid+'/join',function(resp){
+			        $('#joincampaignmodal .modal-body').html(resp);
+			        $('#joincampaignmodal').modal('show');
+			    })
+			}
+			var doPlantation = function(camid) {
+				    $.get('/zone/'+camid+'/add',function(resp){
+				        $('#joincampaignmodal .modal-body').html(resp);
+				        $('#joincampaignmodal').modal('show');
+				    })
+			}
 		</script>
 		{% endblock extrajs %}
 	</body>

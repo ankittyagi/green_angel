@@ -69,6 +69,7 @@ def home(request):
     return render(request, 'app_users/home.html', locals())
 
 
+@login_required
 def dashboard(request):
     """
     dashboard view
@@ -83,6 +84,7 @@ def dashboard(request):
     return render(request, 'app_users/dashboard.html', locals())
 
 
+@login_required
 def campaign(request):
     """
     campaign view
@@ -93,6 +95,7 @@ def campaign(request):
     return render(request, 'app_users/campaign.html', locals())
 
 
+@login_required
 def mycampaign(request):
     """
     mycampaign view
@@ -101,6 +104,7 @@ def mycampaign(request):
     return render(request, 'app_users/mycampaign.html', locals())
 
 
+@login_required
 def campaign_join(request, campaignid):
     """
     campaign_join view
@@ -118,6 +122,7 @@ def campaign_join(request, campaignid):
     return render(request, 'app_users/addzone.html', locals())
 
 
+@login_required
 @csrf_exempt
 def add_plantation(request, zoneid):
     """
@@ -148,3 +153,21 @@ def add_plantation(request, zoneid):
                 res['message'] = str(e)
         return HttpResponse(json.dumps(res), content_type='application/json')
     return render(request, 'app_users/addplantation.html', locals())
+
+
+@login_required
+def myplantation(request):
+    """
+    myplantation view
+    """
+    zones = request.user.profile.zones.all().order_by('-id')
+    return render(request, 'app_users/mycampaign.html', locals())
+
+
+@login_required
+def mypoints(request):
+    """
+    myplantation view
+    """
+    zones = request.user.profile.zones.all().order_by('-id')
+    return render(request, 'app_users/mycampaign.html', locals())
