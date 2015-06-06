@@ -1,0 +1,18 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+<div class='row'>
+<h4>&nbsp;&nbsp;&nbsp;Be a part of {{ campaign.name }}</h4>
+<div class='well'>
+<form action="{% url 'campaign_join' campaign.id %}" class="form-horizontal" method="post" id='alertaddform'>
+{% csrf_token %}
+<div class="form-group">
+	<span class="col-xs-4"><label for="id_zone" class='form-control'>Select Zone:</label></span>
+	<span class="col-xs-8">
+		{{ form.zone|add_class:"form-control input-lg" }}
+	</span>
+</div>
+<button type="submit" class="btn btn-success" >Join Campaign</button>
+
+</form>
+</div>
+</div>
