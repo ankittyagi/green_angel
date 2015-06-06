@@ -3,64 +3,163 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Green Angel | Login</title>
+		<title>Green Angel | {% block title %}{% endblock title %}</title>
+		<meta name="description" content="Green Angel - Go Green Initiative" />
+		<meta name="author" content="Tarun Behal" />
+  		<link rel="icon" type="image/png" href="{{ STATIC_URL }}{{ STATIC_URL }}img/logo_icon.png" />
 		
-		<!-- Error CSS -->
-		<link href="{{STATIC_URL}}css/login.css" rel="stylesheet" media="screen">
+		<!-- Bootstrap CSS -->
+		<link href="{{STATIC_URL}}css/bootstrap.min.css" rel="stylesheet" media="screen">
 
 		<!-- Animate CSS -->
 		<link href="{{STATIC_URL}}css/animate.css" rel="stylesheet" media="screen">
 
-		<!-- Font Awesome -->
+		<!-- date range -->
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/daterange.css">
+
+		<!-- Main CSS -->
+		<link href="{{STATIC_URL}}css/main2.css" rel="stylesheet" media="screen">
+
+		<!-- Slidebar CSS -->
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/slidebars.css">
+
 		<link href="{{STATIC_URL}}css/fa/css/font-awesome.min.css" rel="stylesheet">
-	</head>
+		<link href="{{STATIC_URL}}fonts/metrize.css" rel="stylesheet">
+
+	</head>  
+
 	<body>
-		<!-- <form action="/" id="wrapper"> -->
-			<div id="box" class="animated bounceIn">
-				<div id="top_header">
-					<a href="/">
-						<img class="logo" src="{{STATIC_URL}}img/logo_icon.png" alt="logo">
-					</a>
-					<h5>
-						Sign in to continue to your<br />
-						Green Angel account.
-					</h5>
-				</div>
-				<di id="inputs">
-					<div class="form-control">
-						<input type="text" placeholder="Email">
-						<i class="fa fa-envelope-o"></i>
-					</div>
-					<div class="form-control">
-						<input type="password" placeholder="Password">
-						<i class="fa fa-key"></i>
-					</div>
-					or
-					<div class="col-lg-12">
 
-						<span class="col-lg-6 col-xs-6">
-					          <button class="btn btn-block btn-social btn-facebook top-spacer" style="margin-left: 15%;" onclick="window.location = 'www.google.com';">
-					            Sign in <i class="fa fa-facebook"></i>
-					          </button>
-						</span>
-						<span class="col-lg-6 col-xs-6">
-					          <button class="btn btn-block btn-social btn-microsoft top-spacer">
-					            Sign in <i class="fa fa-windows"></i>
-					          </button>
-						</span>
+		<!-- Left sidebar start -->
+		<aside id="sidebar">
 
+			<!-- Logo starts -->
+			<a href="/" class="logo">
+				<img src="{{ STATIC_URL }}img/logo.png" alt="logo">
+			</a>
+			<!-- Logo ends -->
+
+			<!-- Menu start -->
+			<div id='menu'>
+				<ul>
+					{% block nav %}
+					<li class='highlight'>
+						<a href='/dashboard'>
+							<div class="fs1" aria-hidden="true" data-icon="&#xe007;"></div>
+							<span>Dashboard</span>
+						</a>
+					</li>
+					<li>
+						<a href='/campaign'>
+							<div class="fs1" aria-hidden="true" data-icon="&#xe0f8;"></div>
+							<span>All Campaigns</span>
+						</a>
+					</li>
+					<li>
+						<a href='graphs.html'>
+							<div class="fs1" aria-hidden="true" data-icon="&#xe0f8;"></div>
+							<span>My Campaigns</span>
+						</a>
+					</li>
+					<li>
+						<a href='gallery.html'>
+							<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+							<span>My Earnings</span>
+						</a>
+					</li>
+					<hr>
+					<li>
+						<a href='/logout/'>
+							<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+							<span>Logout</span>
+						</a>
+					</li>
+					{% endblock nav %}
+				</ul>
+			</div>
+			<!-- Menu End -->
+
+			<!-- Extras starts -->
+			<div class="extras">
+				<div class="ex-wrapper">
+					<div class="alert alert-info">
+						<strong>Heads up!</strong> Govt of India is planning to start new planatation drive at Uttar Pradesh on Sept 2015.
 					</div>
-					<input type="submit" value="Sign In">
-				</di>
-				<div id="bottom">
-					<div class="squared-check">
-						<input type="checkbox" value="None" id="remember" name="check" checked="">
-						<label for="remember"></label>
-						<div class="cb-label">Remember</div>
-					</div>
-					<a class="right_a" href="login.html#">Forgot password?</a>
 				</div>
 			</div>
-		</form>
+			<!-- Extras ends -->
+		</aside>
+		<!-- Left sidebar end -->
+
+		<!-- Dashboard Wrapper Start -->
+		<div class="dashboard-wrapper">
+
+			<!-- Main Container Start -->
+			<div class="main-container">
+
+				<!-- Top Bar Starts -->
+				<div class="top-bar clearfix">
+					<div class="page-title">
+						<h4><div class="fs1" aria-hidden="true" data-icon="&#xe007;"></div>{% block breadcrumb %}Dashboard{% endblock breadcrumb %}
+						</h4>
+					</div>
+				</div>
+				<!-- Top Bar Ends -->
+
+				<!-- Container fluid Starts -->
+				<div class="container-fluid">
+
+					<!-- Spacer starts -->
+					<div class="spacer-xs">
+						{% block body %}
+						{% endblock body %}
+					</div>
+					<!-- Spacer ends -->
+
+				</div>
+				<!-- Container fluid ends -->
+
+			</div>
+			<!-- Main Container Start -->
+
+			<!-- Footer Start -->
+			<footer>
+				Copyright Green Angel - Nagarro Inc <span>2015</span>. All Rights Reserved.
+			</footer>
+			<!-- Footer end -->
+			
+		</div>
+		<!-- Dashboard Wrapper End -->
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="{{STATIC_URL}}js/jquery.js"></script>
+
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+
+		<!-- Flot Charts -->
+		<script src="{{STATIC_URL}}js/flot/jquery.flot.js"></script>
+		<script src="{{STATIC_URL}}js/flot/jquery.flot.time.js"></script>
+		<script src="{{STATIC_URL}}js/flot/jquery.flot.selection.js"></script>
+		<script src="{{STATIC_URL}}js/flot/jquery.flot.resize.js"></script>
+		<script src="{{STATIC_URL}}js/flot/jquery.flot.tooltip.js"></script>
+		<script src="{{STATIC_URL}}js/flot/flot.excanvas.min.js"></script>
+
+		<!-- Custom flot JS -->
+		<script src="{{STATIC_URL}}js/flot/custom/combine-chart.js"></script>
+
+		<!-- Animated Right Sidebar -->
+		<script src="{{STATIC_URL}}js/slidebars.js"></script>
+
+		<!-- Tyny Scrollbar -->
+		<script src="{{STATIC_URL}}js/tiny-scrollbar.js"></script>
+
+		<!-- Date Range -->
+		<script src="{{STATIC_URL}}js/daterange/moment.js"></script>
+		<script src="{{STATIC_URL}}js/daterange/daterangepicker.js"></script>
+
+		<!-- Custom JS -->
+		<script src="{{STATIC_URL}}js/custom.js"></script>
+		<script src="{{STATIC_URL}}js/custom-index.js"></script>
 	</body>
 </html>
