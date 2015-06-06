@@ -82,11 +82,9 @@ $(function() {
       var arr = ['banner1.jpg)','banner2.jpg)','banner3.jpg)'];
       var backg = $('#header').css('background-image');
       var string = backg.substr(backg.lastIndexOf("/") + 1);
-      console.log(string);
       var new_image = $('#header').css('background-image').replace(string,arr[i]);
       $('#header').css('background-image',new_image);
-      console.log($('#header').css('background-image'));
-
+     
       if(i==3){
         i=0;
       }else{

@@ -97,7 +97,7 @@ body:after {
 
 .lb-nav a {
   outline: none;
-  background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+  /*background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');*/
 }
 
 .lb-prev, .lb-next {
@@ -180,7 +180,7 @@ body:after {
 }
 
 .lb-data .lb-number {
-  display: block;
+  display: no;
   clear: left;
   padding-bottom: 1em;
   font-size: 12px;
