@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Green Angel | Login</title>
+		
+		<!-- Error CSS -->
+		<link href="{{STATIC_URL}}css/login.css" rel="stylesheet" media="screen">
+
+		<!-- Animate CSS -->
+		<link href="{{STATIC_URL}}css/animate.css" rel="stylesheet" media="screen">
+
+		<!-- Font Awesome -->
+		<link href="{{STATIC_URL}}css/fa/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<!-- <form action="/" id="wrapper"> -->
+			<div id="box" class="animated bounceIn">
+				<div id="top_header">
+					<a href="/">
+						<img class="logo" src="{{STATIC_URL}}img/logo_icon.png" alt="logo">
+					</a>
+					<h5>
+						Sign in to continue to your<br />
+						Green Angel account.
+					</h5>
+				</div>
+				<di id="inputs">
+					<div class="form-control">
+						<input type="text" placeholder="Email">
+						<i class="fa fa-envelope-o"></i>
+					</div>
+					<div class="form-control">
+						<input type="password" placeholder="Password">
+						<i class="fa fa-key"></i>
+					</div>
+					or
+					<div class="col-lg-12">
+
+						<span class="col-lg-6 col-xs-6">
+					          <button class="btn btn-block btn-social btn-facebook top-spacer" style="margin-left: 15%;" onclick="window.location = 'www.google.com';">
+					            Sign in <i class="fa fa-facebook"></i>
+					          </button>
+						</span>
+						<span class="col-lg-6 col-xs-6">
+					          <button class="btn btn-block btn-social btn-microsoft top-spacer">
+					            Sign in <i class="fa fa-windows"></i>
+					          </button>
+						</span>
+
+					</div>
+					<input type="submit" value="Sign In">
+				</di>
+				<div id="bottom">
+					<div class="squared-check">
+						<input type="checkbox" value="None" id="remember" name="check" checked="">
+						<label for="remember"></label>
+						<div class="cb-label">Remember</div>
+					</div>
+					<a class="right_a" href="login.html#">Forgot password?</a>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

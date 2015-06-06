@@ -109,9 +109,9 @@ MASTER_PASSWORD = "GreenAngel"
 
 LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/mycampaign'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/login/'
-SOCIAL_AUTH_LOGIN_URL = '/'
+SOCIAL_AUTH_LOGIN_URL = '/mycampaign'
 
 # login backends
 AUTHENTICATION_BACKENDS = (
