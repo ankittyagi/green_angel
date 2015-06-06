@@ -1,16 +1,93 @@
 <!DOCTYPE html>
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+{% load widget_tweaks %}
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/css/bootstrap.min.css">
+    
+  <style type="text/css">
+    @charset "UTF-8";
+    /* CSS Document */
 
-<a name="yammer" href="/login/yammer/">
-  Sign in with Yammer
-</a>
-<a name="facebook" href="/login/facebook/">
-  Sign in with Facebook
-</a>
+    body {
+      width:100px;
+      height:100px;
+      background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
+      background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
+      background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
+      background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
+      background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
+      font-family: 'Raleway', sans-serif;
+    }
 
-<form action="." method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="Login">
-</form>
+    p {
+      color:#CCC;
+    }
 
+    .spacing {
+      padding-top:7px;
+      padding-bottom:7px;
+    }
+    .middlePage {
+      width: 680px;
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .logo {
+      color:#CCC;
+    }
+    .row .col-md-5 img{
+      margin-bottom: 5px;
+    }
+    .textinput{
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <div class="middlePage">
+      <div class="page-header">
+        <h1 class="logo">
+        <img src="{{STATIC_URL}}img/logo_icon.png" alt="Green Angel" title="Green Angel"></h1>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Please Sign In</h3>
+        </div>
+        <div class="panel-body">
+
+          <div class="row">
+
+            <div class="col-md-5" >
+              <a href="/login/facebook/"><img src="{{STATIC_URL}}img/fb.png" /></a><br/>
+              <a href="/login/twitter/"><img src="{{STATIC_URL}}img/tw.png" /></a><br/>
+              <a href="/login/yammer/"><img src="{{STATIC_URL}}img/yammer.png" height="50px" width="250px" /></a>
+            </div>
+
+            <div class="col-md-7" style="border-left:1px solid #ccc;height:160px">
+                <form action="." class="form-horizontal" method="post">
+                <fieldset>
+                    {{ form.username|add_class:"form-control input-md textinput"|attr:"autocomplete:off"|attr:"placeholder:Enter Username" }}
+                    {{ form.password|add_class:"form-control input-md textinput"|attr:"autocomplete:off"|attr:"placeholder:Enter Username"}}
+                  <div class="spacing"><a href="#"><small> Forgot Password?</small></a><br/></div>
+                  <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-info btn-sm pull-right">Sign In</button>
+
+
+                </fieldset>
+              </form>
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
