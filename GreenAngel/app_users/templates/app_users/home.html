@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Green Angel - Initiative to go Green</title>
   
-  <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/logo_icon.png" />
   <!-- Bootstrap -->
   <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/jasny-bootstrap.min.css">
@@ -28,26 +27,25 @@
   <![endif]-->
 </head>
 <body>
-	 
   <!-- Header Section Start -->
   <div id="header">
+    <div class="logo pull-left wow fadeInDown animated" data-wow-delay=".2s">
+      <a href="index.html"><img src="{{STATIC_URL}}img/logo_icon.png" alt="logo"></a>
+    </div>    
+
     <div class="container">
-      <div class="col-md-12 top-header">
-        <div class="logo-menu">
-          <div class="logo pull-left wow fadeInDown animated" data-wow-delay=".2s">
-            <a href="/"><img src="{{STATIC_URL}}img/logo_icon.png" alt="logo"></a>
-          </div> 
-        </div>    
-      </div>
       <div class="row">
         <div class="col-md-12">
           <div class="banner text-center">
-            <h1 class="wow fadeInDown animated" data-wow-delay=".8s">Welocome to Green angel</h1>
-            <h2 class="wow fadeInDown animated" data-wow-delay=".6s">A Initaitive to go green with Technology</h2>
+            <h1 class="wow fadeInDown animated" data-wow-delay=".8s">Welocome to Green Angel</h1>
+            <h2 class="wow fadeInDown animated" data-wow-delay=".6s">An Initaitive To Go Green With Technology</h2>
             <span class="scroll">
-              <a href="#works" class="btn btn-common lg wow fadeInLeft animated" data-wow-delay="1.0s">Know More </a>
+              <a href="#works" class="btn btn-common lg wow fadeInLeft animated" data-wow-delay="1.0s">How It Works</a>
             </span>
-            <a href="/login" class="btn btn-common lg wow fadeInRight animated" data-wow-delay="1.0s">Participate</a>
+            <a href="login.html" class="btn btn-common lg wow fadeInRight animated" data-wow-delay="1.0s">Participate</a>
+            <div class="scroll">
+              <a href="#works"><i class="fa fa-angle-down wow fadeInUp animated" data-wow-delay="1.2s"></i></a>
+          </div>
         </div>
         </div>
       </div>
@@ -55,7 +53,9 @@
   </div>
   <!-- Header Section End -->
 
-  <!-- Work Section Start -->
+
+
+    <!-- Work Section Start -->
   <section id="works">
     <div class="container">
       <div class="row">
@@ -81,7 +81,7 @@
           </div>
         </div>
         <div class="col-md-5 grid-right wow fadeInRight animated" data-wow-delay="1.6s">
-          <div class="grid-box large">
+          <div class="grid-box large" style="height: 100%;width:125%">
             <h1>Let's collaborate to make India greener!</h1>
               <blockquote>
                 <div class="commant">
@@ -89,10 +89,8 @@
                     <span class="quote" style="  background: rgb(161, 205, 92);  width: 40px;  position: absolute;  height: 40px;  left: 8px;  border-radius: 50%;  text-align: center;  padding-top: 6px;  top: -12px;"><i class="fa fa-quote-left"></i></span>
                   </div>
                   <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12" style="width:90%;float:right;">
-                    <div class="info">
-                      <p>TLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-                      <h4>Anamoul Rouf</h4>
-                      <h5>CEO, CloudBee</h5>
+                    <div class="info" style="text-align: justify;">
+                      <p>Become an integral part of the Tree Plantation Drive being organized by the Government near your locality and get exiciting rewards in return. For each tree you plant, get reward points which can be redeemed to pay your bill at any government organization. Along with that, boast about your contributions on all major social platforms and get famous. Come, join us to make Mother Earth a better place to live in and become a true saviour!</p>
                     </div>
                   </div>
                 </div>
@@ -120,7 +118,6 @@
       </div>
     </div>
   </section>
-  <!-- Work Section End  -->
 
   <!-- Testimonial Section Start -->
   <section id="testimonial">
@@ -146,9 +143,8 @@
                   </div>
                   <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
                     <div class="info">
-                      <p>TLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-                      <h4>Anamoul Rouf</h4>
-                      <h5>CEO, CloudBee</h5>
+                      <p>The best time to plant a tree is twenty years ago. The second best time is now</p>
+                      <h4>Anonymous</h4>
                     </div>
                   </div>
                 </div>
@@ -166,9 +162,8 @@
                   </div>
                   <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
                     <div class="info">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-                      <h4>Imran Khan</h4>
-                      <h5>Founder, WPBean</h5>
+                      <p>God writes the Gospel not in the Bible alone, but also on trees, and in the flowers and clouds and stars.</p>
+                      <h4>Martin Luther</h4>
                     </div>
                   </div>
                 </div>
@@ -185,9 +180,8 @@
                   </div>
                   <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
                     <div class="info">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>
-                      <h4>Tanvir Ahmed</h4>
-                      <h5>Contributor, GrayGrids</h5>
+                      <p>God has cared for these trees, saved them from drought, disease, avalanches, and a thousand tempests and floods. But he cannot save them from fools.</p>
+                      <h4>John Muir</h4>
                     </div>
                   </div>
                 </div>
@@ -199,12 +193,10 @@
     </div>
   </section>
   <!-- Testimonial Section End -->
-
-  <!-- Clients Section Start -->
   <section id="clients">
     <div class="container">
       <div class="row">
-        <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s">Some Available <br><span>Plants</span></h1>
+        <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s">Recently Planted <br><span>Trees</span></h1>
         <div id="clients-carousel" class="owl-carousel owl-theme">
           <div class="item wow fadeInLeft animated" data-wow-delay=".9s">
             <a href="#"><img src="{{STATIC_URL}}img/clients/img1.png" alt=""></a>
@@ -224,9 +216,6 @@
           <div class="item wow fadeIn animated">
             <a href="#"><img src="{{STATIC_URL}}img/clients/img6.png" alt=""></a>
           </div>
-          <div class="item wow fadeIn animated">
-            <a href="#"><img src="{{STATIC_URL}}img/clients/img7.png" alt=""></a>
-          </div>
         </div>
       </div>
     </div>
@@ -234,7 +223,7 @@
   <!-- Clients Section End -->
 
   <!-- Skills Section Start -->
-  <section id="skills">
+<!--   <section id="skills">
     <div class="container">
       <div class="row">
       <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s">My<br>Passionate<br> <span>Skills</span></h1>
@@ -280,14 +269,12 @@
       </div>
       </div>
     </div>
-  </section>
-  <!-- Skills Section End -->
-
+  </section> -->
   <!-- Blog Section Start -->
-  <section id="blog">
+<!--   <section id="blog">
     <div class="container">
       <div class="row">
-        <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s">My<br>Homey<br><span>Blog</span></h1>
+        <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s">Our work <span>showcase</span></h1>
         <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
           <div class="blog-large wow fadeInLeft animated"  data-wow-delay="1.2s">
             <img src="{{STATIC_URL}}img/blog/img1.jpg" alt="">
@@ -331,14 +318,14 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Blog Section Start -->
 
   <!-- Feedback Section Start -->
-  <section id="feedback">
+<!--   <section id="feedback">
     <div class="container">
       <div class="row">
-        <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s"><span>Hire</span><br>or Contact <br> Me</h1>
+        <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s"><span>Drop a message</span><br>or Contact <br> Us</h1>
         <div class="col-sm-6 col-md-6 wow fadeInLeft animated" data-wow-delay="1.4s">
           <form action="" name="contact">
             <div class="input-group">
@@ -362,14 +349,14 @@
         </div>
         <div class="col-sm-4 col-md-4 col-md-offset-2 wow fadeInRight animated" data-wow-delay="1.4s">
           <div class="address">
-            <h2>Contact Info</h2>
+            <h2>Contact Us</h2>
             <ul class="contact-info">
-              <li><i class="fa fa-mobile"></i> +88 019788XYZ</li>
-              <li><i class="fa fa-skype"></i> musa.xyz</li>
-              <li><i class="fa fa-envelope-o"></i> musaxyz@gmail.com</li>
+              <li><i class="fa fa-mobile"></i> +91 9582144916</li>
+              <li><i class="fa fa-skype"></i> prafful.garg90</li>
+              <li><i class="fa fa-envelope-o"></i> prafful.garg@nagarro.com</li>
             </ul>
           
-          <h2>Follow Me</h2>
+          <h2>Follow Us</h2>
             <ul class="social-icon">
               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -381,7 +368,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Feedback Section End -->
 
   <!-- Footer section Start -->
@@ -390,7 +377,7 @@
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
           <div class="copyright wow fadeInUp animated" data-wow-delay=".8s">
-            <p>Copyright &copy; 2014 GrayGrids | All rights reserved.</p>
+            <p>Copyright &copy; 2015 Nagarro Software | All rights reserved.</p>
           </div>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
@@ -399,7 +386,7 @@
           </div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-          <p class="text-center wow fadeInUp animated" data-wow-delay=".8s">Developed By <a href="http://graygrids.com">GrayGrids</a></p>
+          <p class="text-center wow fadeInUp animated" data-wow-delay=".8s">Developed By <a href="http://www.nagarro.com">NooBs |  Nagarro</a></p>
         </div>
       </div>
     </div>
