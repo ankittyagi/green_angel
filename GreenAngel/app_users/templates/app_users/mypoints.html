@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}My Points{% endblock title %}
+{% block breadcrumb %}My Points{% endblock breadcrumb %}
+
+{% block nav %}
+<li>
+	<a href='/dashboard'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe007;"></div>
+		<span>Dashboard</span>
+	</a>
+</li>
+<li>
+	<a href='/campaign'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0f8;"></div>
+		<span>All Campaigns</span>
+	</a>
+</li>
+<li>
+	<a href='/mycampaign'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0f8;"></div>
+		<span>My Campaigns</span>
+	</a>
+</li>
+<li>
+	<a href='/myplantation'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+		<span>My Plantation</span>
+	</a>
+</li>
+<li class='highlight'>
+	<a href='/mypoints'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+		<span>My Points</span>
+	</a>
+</li>
+<hr>
+<li>
+	<a href='/logout/'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+		<span>Logout</span>
+	</a>
+</li>
+{% endblock nav %}
+{% block body %}
+
+<div class="row no-gutter">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4>Points History</h4>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table table -bordered no-margin">
+						<thead>
+							<tr>
+								<th style="width:20%">
+									Campaign
+								</th>
+								<th style="width:20%">
+									Zone
+								</th>
+								<th style="width:20%">
+									Points
+								</th>
+								<th style="width:20%">
+									Status
+								</th>
+								<th style="width:20%">
+									Posted on
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for pt in pts %}
+							<tr>
+								<td>{{pt.zone.campaign.name}}</td>
+								<td>{{pt.zone.name}}</td>
+								<td>{{pt.points}}</td>
+								<td>{{pt.get_status_display}}</td>
+								<td>{{pt.created_at}}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock body %}

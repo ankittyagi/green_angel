@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}My Planations{% endblock title %}
+{% block breadcrumb %}My Planations{% endblock breadcrumb %}
+
+{% block nav %}
+<li>
+	<a href='/dashboard'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe007;"></div>
+		<span>Dashboard</span>
+	</a>
+</li>
+<li>
+	<a href='/campaign'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0f8;"></div>
+		<span>All Campaigns</span>
+	</a>
+</li>
+<li>
+	<a href='/mycampaign'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0f8;"></div>
+		<span>My Campaigns</span>
+	</a>
+</li>
+<li class='highlight'>
+	<a href='/myplantation'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+		<span>My Plantation</span>
+	</a>
+</li>
+<li>
+	<a href='/mypoints'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+		<span>My Points</span>
+	</a>
+</li>
+<hr>
+<li>
+	<a href='/logout/'>
+		<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+		<span>Logout</span>
+	</a>
+</li>
+{% endblock nav %}
+{% block body %}
+
+<div class="row no-gutter">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4>My contribution to Green Earth.</h4>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table table -bordered no-margin">
+						<thead>
+							<tr>
+								<th width="20%">
+									Campaign
+								</th>
+								<th width="20%">
+									Zone
+								</th>
+								<th width="40%">
+									&nbsp;
+								</th>
+								<th width="20%">
+									&nbsp;
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for mp in mps%}
+							<tr>
+								<td>{{mp.zone.campaign.name}}</td>
+								<td>{{mp.zone.name}}</td>
+								<td><img src="{{MEDIA_URL}}{{mp.photo}}" style="width:100px;"></td>
+								<td>{{mp.created_at}}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock body %}

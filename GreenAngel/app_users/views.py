@@ -142,9 +142,12 @@ def add_plantation(request, zoneid):
             try:
                 ftype = imghdr.what(newpic)
                 if ftype:
+                    point = int(
+                        float(zone.total_points) / float(zone.total_plants))
                     Plantation.objects.create(user=request.user,
                                               zone=zone,
-                                              photo=newpic)
+                                              photo=newpic,
+                                              points=point)
                     res['success'] = True
                 else:
                     res['message'] = "Please select image file.!"
@@ -160,8 +163,8 @@ def myplantation(request):
     """
     myplantation view
     """
-    zones = request.user.profile.zones.all().order_by('-id')
-    return render(request, 'app_users/mycampaign.html', locals())
+    mps = Plantation.objects.filter(user=request.user).order_by('-id')
+    return render(request, 'app_users/myplantation.html', locals())
 
 
 @login_required
@@ -169,5 +172,5 @@ def mypoints(request):
     """
     myplantation view
     """
-    zones = request.user.profile.zones.all().order_by('-id')
-    return render(request, 'app_users/mycampaign.html', locals())
+    pts = Plantation.objects.filter(user=request.user).order_by('-id')
+    return render(request, 'app_users/mypoints.html', locals())

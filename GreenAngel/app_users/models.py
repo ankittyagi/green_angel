@@ -63,7 +63,7 @@ class Plantation(models.Model):
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     STATUS_CHOICES = (
-        ('draft', 'Draft'),
+        ('draft', 'Pending'),
         ('approve', 'Approved'),
         ('reject', 'Rejected'),
     )
