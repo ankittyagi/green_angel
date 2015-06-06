@@ -49,7 +49,7 @@ class Campaign(models.Model):
 
 class CampaignZone(models.Model):
     name = models.CharField(max_length=150)
-    campaign = models.ForeignKey(Campaign)
+    campaign = models.ForeignKey(Campaign, related_name="zones")
     total_points = models.PositiveIntegerField(default=1)
     total_plants = models.PositiveIntegerField(default=1)
     description = models.TextField(blank=True, null=True)
