@@ -29,7 +29,7 @@ ul li {
   list-style: none;
 }
 .row {
-  padding: 90px 0 92px;
+  padding: 5% 0 92px;
 }
 img {
   max-width: 100%;
@@ -154,7 +154,7 @@ img {
   display: block;
 }
 #header .top-header {
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 #header .top-header #menu {
   display: block;

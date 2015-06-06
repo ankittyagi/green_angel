@@ -1,94 +1,94 @@
-<<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  
 <head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <title>Login - Green Angel</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"> 
     
-  <style type="text/css">
-    @charset "UTF-8";
-    /* CSS Document */
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
 
-    body {
-      width:100px;
-      height:100px;
-      background: -webkit-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Chrome 10+, Saf5.1+ */
-      background:    -moz-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* FF3.6+ */
-      background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
-      background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
-      background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
-      font-family: 'Raleway', sans-serif;
-    }
+<link href="css/font-awesome.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+    
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/pages/signin.css" rel="stylesheet" type="text/css">
 
-    p {
-      color:#CCC;
-    }
-
-    .spacing {
-      padding-top:7px;
-      padding-bottom:7px;
-    }
-    .middlePage {
-      width: 680px;
-      height: 500px;
-      position: absolute;
-      top:0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-    }
-
-    .logo {
-      color:#CCC;
-    }
-    .row .col-md-5 img{
-      margin-bottom: 5px;
-    }
-    .textinput{
-      margin-top: 10px;
-    }
-  </style>
 </head>
+
 <body>
-    <div class="middlePage">
-      <div class="page-header">
-        <h1 class="logo">
-        <img src="assets/img/logo_icon.png" alt="Green Angel" title="Green Angel"></h1>
-      </div>
+	
+	<div class="navbar navbar-fixed-top">
+	
+	<div class="navbar-inner">
+		
+		<div class="container">
+			
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			
+			<a class="brand" href="home.html">
+				Green Angel				
+			</a>		
+			
+			<div class="nav-collapse">
+				<ul class="nav pull-right">				
+					<li class="">						
+						<a href="home.html" class="">
+							<i class="icon-chevron-left"></i>
+							Back to Homepage
+						</a>
+						
+					</li>
+				</ul>
+				
+			</div><!--/.nav-collapse -->	
+	
+		</div> <!-- /container -->
+		
+	</div> <!-- /navbar-inner -->
+	
+</div> <!-- /navbar -->
 
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          <h3 class="panel-title">Please Sign In</h3>
-        </div>
-        <div class="panel-body">
-
-          <div class="row">
-
-            <div class="col-md-5" >
-              <a href="#"><img src="http://techulus.com/buttons/fb.png" /></a><br/>
-              <a href="#"><img src="http://techulus.com/buttons/tw.png" /></a><br/>
-              <a href="#"><img src="https://nmoneypenny.files.wordpress.com/2015/02/sign-in-with-yammer.png" height="50px" width="250px" /></a>
-            </div>
-
-            <div class="col-md-7" style="border-left:1px solid #ccc;height:160px">
-              <form class="form-horizontal">
-                <fieldset>
-
-                  <input id="textinput_username" name="textinput" type="text" placeholder="Enter User Name" class="form-control input-md textinput">
-                  <input id="textinput_password" name="textinput" type="text" placeholder="Enter Password" class="form-control input-md textinput">
-                  <div class="spacing"><a href="#"><small> Forgot Password?</small></a><br/></div>
-                  <button id="singlebutton" name="singlebutton" class="btn btn-info btn-sm pull-right">Sign In</button>
 
 
-                </fieldset>
-              </form>
-            </div>
+<div class="account-container">
+	
+	<div class="content clearfix">
+		
+		<form action="#" method="post">
+		
+			<h1>Please Login</h1>		
+			
+			<div class="login-fields">
+				
+				<p>Please Choose your sign in method</p>
+				
+				<button class="button btn btn-info btn-medium">Sign in with Facebook</button>
+				<button class="button btn btn-success btn-medium">Sign in with Twitter</button>
 
-          </div>
-          
-        </div>
-      </div>
-    </div>
+			</div> <!-- /login-fields -->
+
+			
+			
+			
+		</form>
+		
+	</div> <!-- /content -->
+	
+</div> <!-- /account-container -->
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<script src="js/signin.js"></script>
 
 </body>
+
 </html>
