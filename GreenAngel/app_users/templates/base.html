@@ -25,6 +25,7 @@
 
 		<link href="{{STATIC_URL}}css/fa/css/font-awesome.min.css" rel="stylesheet">
 		<link href="{{STATIC_URL}}fonts/metrize.css" rel="stylesheet">
+		{% block extracss %}{% endblock extracss %}
 
 	</head>  
 
@@ -56,7 +57,7 @@
 						</a>
 					</li>
 					<li>
-						<a href='graphs.html'>
+						<a href='/mycampaign'>
 							<div class="fs1" aria-hidden="true" data-icon="&#xe0f8;"></div>
 							<span>My Campaigns</span>
 						</a>
@@ -122,6 +123,19 @@
 			</div>
 			<!-- Main Container Start -->
 
+
+            <!-- Modal -->
+            <div class="modal fade" id="joincampaignmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  </div>
+                  <div class="modal-body">
+                  </div>
+                </div>
+              </div>
+            </div>
 			<!-- Footer Start -->
 			<footer>
 				Copyright Green Angel - Nagarro Inc <span>2015</span>. All Rights Reserved.
@@ -137,17 +151,6 @@
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
 
-		<!-- Flot Charts -->
-		<script src="{{STATIC_URL}}js/flot/jquery.flot.js"></script>
-		<script src="{{STATIC_URL}}js/flot/jquery.flot.time.js"></script>
-		<script src="{{STATIC_URL}}js/flot/jquery.flot.selection.js"></script>
-		<script src="{{STATIC_URL}}js/flot/jquery.flot.resize.js"></script>
-		<script src="{{STATIC_URL}}js/flot/jquery.flot.tooltip.js"></script>
-		<script src="{{STATIC_URL}}js/flot/flot.excanvas.min.js"></script>
-
-		<!-- Custom flot JS -->
-		<script src="{{STATIC_URL}}js/flot/custom/combine-chart.js"></script>
-
 		<!-- Animated Right Sidebar -->
 		<script src="{{STATIC_URL}}js/slidebars.js"></script>
 
@@ -161,5 +164,6 @@
 		<!-- Custom JS -->
 		<script src="{{STATIC_URL}}js/custom.js"></script>
 		<script src="{{STATIC_URL}}js/custom-index.js"></script>
+		{% block extrajs %}{% endblock extrajs %}
 	</body>
 </html>

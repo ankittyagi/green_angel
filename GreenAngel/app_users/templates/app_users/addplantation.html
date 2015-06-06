@@ -1,0 +1,57 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+<div class='row'>
+<h4>&nbsp;&nbsp;&nbsp;Be a part of {{ zone.campaign.name }} - {{zone.name}}</h4>
+<div class='well'>
+<form action="{% url 'add_plantation' zone.id %}"  enctype="multipart/form-data" class="form-horizontal" method="post" id='addPlanatationForm'>
+{% csrf_token %}
+<div class="form-group">
+	<a  class="btn btn-info btn-group" onclick="$('#id_photo').trigger('click')">Click to add Image</a>
+	<button type="button" class="btn btn-success" disabled="disabled" id='imgUploader' >+ Start Uploading</button>
+	<div style="display:none;">{{ form.photo }}</div>
+</div>
+<p id='imgUploadStatus' ></p>
+</form>
+</div>
+</div>
+
+<script type='text/javascript'>
+	$(document).ready(function($) {
+		$('#id_photo').on('change', function(){
+			if ($(this).val()) {
+				$('#imgUploader').prop("disabled", false);
+				$('#imgUploadStatus').text("Click on Start Uploading to submit.");
+				console.log($(this).val());
+			} else {
+				$('#imgUploader').prop("disabled", "disabled");				
+			}
+		})
+
+		$('#imgUploader').on('click', function(){
+			console.log('image upload called');
+	        $("#imgUploadStatus").text('Uploading...');
+	        var f =$('#id_photo')[0].files[0];
+	        var formData = new FormData();
+	        formData.append('doc', f, f.name);
+	        $.ajax({
+	            url: $('#addPlanatationForm').attr('action'),
+	            cache: false,
+	            contentType: false,
+	            processData: false,
+	            type: 'post',
+	            data: formData,
+	            success: function(data) {
+	                if (data.success) {
+	                    $("#imgUploadStatus").text('');
+	                    $('#joincampaignmodal').modal('hide');
+	                } else {
+	                    $("#imgUploadStatus").text('Error in image upload. Please try again.');
+	                }
+	            },
+	            error: function(data) {
+	                $("#imgUploadStatus").text('Error in image upload. Please try again.');
+	            },
+	        });
+		})
+	});
+</script>

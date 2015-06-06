@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 import hashlib
+from django.db.models import Sum
 
 
 def upload_path(instance, filename):
@@ -14,16 +15,6 @@ def upload_path(instance, filename):
         slugify(fname),
         hashlib.md5(fname).hexdigest()[:5], extension)
     return 'files/{0}/{1}'.format(instance.id, name)
-
-
-class UserProfile(models.Model):
-    user = models.OneToOneField(User)
-    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
-    updated_at = models.DateTimeField(auto_now=True, blank=True)
-
-
-User.profile = property(
-    lambda u: UserProfile.objects.get_or_create(user=u)[0])
 
 
 class Campaign(models.Model):
@@ -59,11 +50,15 @@ class CampaignZone(models.Model):
     def __str__(self):
         return '{0} - {1}'.format(self.campaign.name, self.name)
 
+    def available_plants(self):
+        ap = Plantation.objects.filter(zone=self, status='approve').count()
+        return self.total_plants - ap
+
 
 class Plantation(models.Model):
     user = models.ForeignKey(User)
-    campaign = models.ForeignKey(Campaign)
-    photo = models.FileField(blank=True, default=False, upload_to=upload_path)
+    zone = models.ForeignKey(CampaignZone)
+    photo = models.ImageField(upload_to=upload_path)
     points = models.PositiveIntegerField(default=1)
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
@@ -74,3 +69,15 @@ class Plantation(models.Model):
     )
     status = models.CharField(
         max_length=10, choices=STATUS_CHOICES, default='draft')
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    zones = models.ManyToManyField(
+        CampaignZone, related_name='zones', blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True)
+
+
+User.profile = property(
+    lambda u: UserProfile.objects.get_or_create(user=u)[0])
