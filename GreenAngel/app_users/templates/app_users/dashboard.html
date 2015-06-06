@@ -83,7 +83,7 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="panel">
 			<div class="panel-heading">
-				<h3>My Campaigns<a href='/mycampaign' class='pull-right btn btn-info'>See more</a></h3>
+				<h3>My Active Campaigns<a href='/mycampaign' class='pull-right btn btn-info'>See more</a></h3>
 			</div>
 			<div class="panel-body">
 				<ul class="progress-stats">
@@ -91,11 +91,10 @@
 					<li>
 						<div class="details">
 							<span>{{ mycam.name }}</span>
-							<span class="pull-right">70%</span>
+							<span class="pull-right">12 plants</span>
 						</div>
 						<div class="progress progress-sm no-margin">
 							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-								<span class="sr-only">70% Complete (success)</span>
 							</div>
 						</div>
 					</li>
@@ -109,7 +108,7 @@
       <div class="panel panel-default">
 
         <div class="panel-heading">
-			<h3>Current Open Campaigns<a href='#' class='pull-right btn btn-info'>See more</a></h3>
+			<h3>Current Open Campaigns<a href='/campaign' class='pull-right btn btn-info'>See more</a></h3>
 		</div>
         <div class="panel-body">
           <div class="row no-gutter">
@@ -138,7 +137,7 @@
         </div>
       </div>
 	</div>
-	<a class="btn btn-group btn-info"> Click to see more</a>
+	<a href='/campaign' class="btn btn-group btn-info"> Click to see more</a>
 </div>
 <!-- Row Ends -->
 
