@@ -6,5 +6,5 @@ register = template.Library()
 
 
 @register.assignment_tag(takes_context=True)
-def i_quoted(context, meep):
-    return meep.quotes.filter(seller=context['seller_user']).count()
+def myplantationtotal(context, campaign, user):
+    return Plantation.objects.filter(zone__campaign=campaign, user=user).count()

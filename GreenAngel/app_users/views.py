@@ -18,8 +18,11 @@ from .forms import (
     LoginForm, JoinCampaignForm, AddPlantationForm)
 
 from django.utils import timezone
-from .models import Campaign, CampaignZone
+from .models import Campaign, CampaignZone, Plantation
 from datetime import datetime
+import json
+import imghdr
+from django.views.decorators.csrf import csrf_exempt
 
 
 def user_login(request):
@@ -108,13 +111,14 @@ def campaign_join(request, campaignid):
         form = JoinCampaignForm(request.POST)
         if form.is_valid():
             request.user.profile.zones.add(form.cleaned_data['zone'])
-            return HttpResponseRedirect('/mycampaigns')
+            return HttpResponseRedirect('/mycampaign')
     ex_zone = request.user.profile.zones.all()
     form.fields['zone'].queryset = CampaignZone.objects.filter(
         campaign=campaign).exclude(id__in=ex_zone)
     return render(request, 'app_users/addzone.html', locals())
 
 
+@csrf_exempt
 def add_plantation(request, zoneid):
     """
     AddPlantationForm view
@@ -122,9 +126,25 @@ def add_plantation(request, zoneid):
     zone = get_object_or_404(CampaignZone, id=zoneid)
     form = AddPlantationForm()
     if request.method == 'POST':
-        form = AddPlantationForm(request.POST)
-        if form.is_valid():
-            print 'success'
-            assert(False)
-            return HttpResponseRedirect('/mycampaigns')
+        newpic = request.FILES.get('doc', None)
+        res = {'success': False}
+        if Plantation.objects.filter(user=request.user,
+                                     zone=zone).count() >= 10:
+            res['message'] = 'Maximum 10 trees allowed per zone.!'
+            return HttpResponse(json.dumps(res),
+                                content_type='application/json')
+        if newpic:
+            try:
+                ftype = imghdr.what(newpic)
+                if ftype:
+                    Plantation.objects.create(user=request.user,
+                                              zone=zone,
+                                              photo=newpic)
+                    res['success'] = True
+                else:
+                    res['message'] = "Please select image file.!"
+            except Exception, e:
+                res['error'] = False
+                res['message'] = str(e)
+        return HttpResponse(json.dumps(res), content_type='application/json')
     return render(request, 'app_users/addplantation.html', locals())

@@ -45,7 +45,7 @@
 	                    $("#imgUploadStatus").text('');
 	                    $('#joincampaignmodal').modal('hide');
 	                } else {
-	                    $("#imgUploadStatus").text('Error in image upload. Please try again.');
+	                    $("#imgUploadStatus").text(data.message);
 	                }
 	            },
 	            error: function(data) {

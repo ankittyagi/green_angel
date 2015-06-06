@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load gafilter %}
 {% block title %}Dashboard{% endblock title %}
 {% block body %}
 
@@ -91,7 +92,7 @@
 					<li>
 						<div class="details">
 							<span>{{ mycam.name }}</span>
-							<span class="pull-right">12 plants</span>
+							<span class="pull-right">{% myplantationtotal mycam request.user as iq %}{% if iq %}{{ iq }} plants{% else %}Start Planting{% endif %} </span>
 						</div>
 						<div class="progress progress-sm no-margin">
 							<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
