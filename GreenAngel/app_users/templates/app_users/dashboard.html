@@ -129,7 +129,7 @@
 						<h3>{{campaign.name}}</h3>
 					</div>
 	                <div class="panel-sub-heading">
-	                  {{campaign.description}}
+	                  {{campaign.description|truncatechars:50}}...
 	                </div>
 	                <div class="panel-body">
 	                  <div class="list-group no-margin">
@@ -147,7 +147,7 @@
         </div>
       </div>
 	</div>
-	<a class="btn btn-group btn-success"> Click to see more</a>
+	<a class="btn btn-group btn-info"> Click to see more</a>
 </div>
 <!-- Row Ends -->
 
