@@ -116,6 +116,15 @@
 						<h4><div class="fs1" aria-hidden="true" data-icon="&#xe007;"></div>{% block breadcrumb %}Dashboard{% endblock breadcrumb %}
 						</h4>
 					</div>
+					<div style="display: inline-block;float: right;">
+						<h4 style="margin: 13px 0;
+padding: 0;
+color: white;
+font-size: 21px;
+font-weight: 300;
+line-height: 100%;"><div class="glyphicon glyphicon-user"></div>&nbsp;Hi {{request.user.username}}
+						</h4>
+					</div>
 				</div>
 				<!-- Top Bar Ends -->
 
@@ -131,8 +140,6 @@
 
 				</div>
 				<!-- Container fluid ends -->
-				<div id="notificationMessages" style="display: none;">{{notmsg}}
-				</div>
 			</div>
 			<!-- Main Container Start -->
 
@@ -192,9 +199,6 @@
 				    })
 			}
 			$(document).ready(function($) {
-				if ($('#notificationMessages').text().length > 0){
-					$.notify($('#notificationMessages').text(), "success");
-				}
 			});
 		</script>
 		{% block extrajs %}
