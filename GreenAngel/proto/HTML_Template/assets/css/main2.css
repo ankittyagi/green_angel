@@ -721,13 +721,13 @@ footer {
     color: #f56b6b; }
 
 .daily-stats h1.number {
-  text-align: right;
-  color: #53acdf;
-  font-weight: 700;
+  text-align: center;
+  color: white;
+  font-weight: 800;
   letter-spacing: 1px;
   margin: 0; }
   .daily-stats h1.number span {
-    color: #e6e6e6; }
+    color: white; }
   .daily-stats h1.number sup {
     font-size: 21px;
     font-weight: 600; }

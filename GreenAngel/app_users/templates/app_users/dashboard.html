@@ -4,78 +4,46 @@
 {% block body %}
 
 <div class="row no-gutter">
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
 		<div class="panel">
-			<div class="panel-heading">
-				<h4>My Earnings</h4>
-				<ul class="links">
-					<li>
-						<a href="index.html#">
-							<i class="fa fa-shopping-cart"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="panel-body" style="
-    background: rgb(255, 249, 181);
-">
-				<div class="daily-stats">
+			<div class="panel-body" style="background: #20DDFC;min-height: 200px;">
+				<div class="daily-stats" style="margin-top:55px">
 					<h1 class="number">
-						<span>00</span>$4595
+						<span class="glyphicon glyphicon-user" style="margin-right: .7em;position: relative;"></span><span>Approved Points&nbsp;:&nbsp;</span>{{apts}}
 					</h1>
-					<p class="avg">Total</p>
-					<ul class="details">
-						<li>
-							<h4 class="num">4</h4>
-							<small>Campaigns</small>
-						</li>
-						<li>
-							<h4 class="num">13</h4>
-							<small>Areas</small>
-						</li>
-						<li>
-							<h4 class="num">170</h4>
-							<small>Trees</small>
-						</li>
-					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
 		<div class="panel">
-			<div class="panel-heading">
-				<h4>Conversion Stats</h4>
-				<ul class="links">
-					<li>
-						<a href="index.html#">
-							<i class="fa fa-line-chart"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="panel-body" style="
-    background: rgb(131, 233, 164);
-">
-				<div class="daily-stats">
-					<h1 class="number primary">
-						<span>000</span>76<sup>%</sup>
+			<div class="panel-body" style="background: #FCC120;min-height: 200px;">
+				<div class="daily-stats" style="margin-top:55px">
+					<h1 class="number">
+						<span class="glyphicon glyphicon-briefcase" style="margin-right: .7em;position: relative;"></span><span>Pending Points&nbsp;:&nbsp;</span>{{ppts}}
 					</h1>
-					<p class="avg">Total</p>
-					<div class="progress progress-sm">
-						<div class="progress-bar progress-bar-success" style="width: 40%">
-						</div>
-						<div class="progress-bar progress-bar-primary" style="width: 60%">
-						</div>
-					</div>
-					<ul class="min-max">
-						<li>
-							<h4 class="num"><small>Min</small>2579</h4>
-						</li>
-						<li>
-							<h4 class="num"><small>Max</small>4475</h4>
-						</li>
-					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+		<div class="panel">
+			<div class="panel-body" style="background: #FC5A20;min-height: 200px;">
+				<div class="daily-stats" style="margin-top:55px">
+					<h1 class="number">
+						<span class="glyphicon glyphicon-globe" style="margin-right: .7em;position: relative;"></span><span>My Campaigns&nbsp;:&nbsp;</span>{{mycampaigns|length}}
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+		<div class="panel">
+			<div class="panel-body" style="background: #20DDFC;min-height: 200px;">
+				<div class="daily-stats" style="margin-top:55px">
+					<h1 class="number">
+						<span class="glyphicon glyphicon-leaf" style="margin-right: .7em;position: relative;"></span><span>My Plantations&nbsp;:&nbsp;</span>{{tlen}}
+					</h1>
 				</div>
 			</div>
 		</div>

@@ -81,6 +81,15 @@ def dashboard(request):
         'campaign__id', flat=True).distinct().all()
     mycampaigns = Campaign.objects.filter(
         id__in=mycampaigns__ids).order_by('-start_at')[:5]
+    ppts = Plantation.objects.filter(
+        user=request.user, status='draft'
+    ).aggregate(Sum('points'))['points__sum'] or 0
+    apts = Plantation.objects.filter(
+        user=request.user, status='approve'
+    ).aggregate(Sum('points'))['points__sum'] or 0
+    tlen = Plantation.objects.filter(
+        user=request.user
+    ).count()
     return render(request, 'app_users/dashboard.html', locals())
 
 
@@ -175,12 +184,10 @@ def mypoints(request):
     pts = Plantation.objects.filter(user=request.user).order_by('-id')
     ppts = Plantation.objects.filter(
         user=request.user, status='draft'
-    ).aggregate(Sum('points'))['points__sum']
+    ).aggregate(Sum('points'))['points__sum'] or 0
     apts = Plantation.objects.filter(
         user=request.user, status='approve'
-    ).aggregate(Sum('points'))['points__sum']
-    if not apts:
-        apts = 0
+    ).aggregate(Sum('points'))['points__sum'] or 0
     return render(request, 'app_users/mypoints.html', locals())
 
 
@@ -191,7 +198,5 @@ def redeem(request):
     """
     apts = Plantation.objects.filter(
         user=request.user, status='approve'
-    ).aggregate(Sum('points'))['points__sum']
-    if not apts:
-        apts = 0
+    ).aggregate(Sum('points'))['points__sum'] or 0
     return render(request, 'app_users/redeem.html', locals())
