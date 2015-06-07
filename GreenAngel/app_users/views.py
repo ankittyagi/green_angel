@@ -90,6 +90,7 @@ def dashboard(request):
     tlen = Plantation.objects.filter(
         user=request.user
     ).count()
+    notmsg = 'Hi {0}, welcome to Green Angel.'.format(request.user.username)
     return render(request, 'app_users/dashboard.html', locals())
 
 

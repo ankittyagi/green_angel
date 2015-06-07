@@ -131,7 +131,8 @@
 
 				</div>
 				<!-- Container fluid ends -->
-
+				<div id="notificationMessages" style="display: none;">{{notmsg}}
+				</div>
 			</div>
 			<!-- Main Container Start -->
 
@@ -172,11 +173,11 @@
 		<!-- Date Range -->
 		<script src="{{STATIC_URL}}js/daterange/moment.js"></script>
 		<script src="{{STATIC_URL}}js/daterange/daterangepicker.js"></script>
+		<script src="{{STATIC_URL}}js/notify.min.js"></script>
 
 		<!-- Custom JS -->
 		<script src="{{STATIC_URL}}js/custom.js"></script>
 		<script src="{{STATIC_URL}}js/custom-index.js"></script>
-		{% block extrajs %}
 		<script type="text/javascript">
 		    var joinCampaign = function(camid) {
 			    $.get('/campaign/'+camid+'/join',function(resp){
@@ -190,7 +191,13 @@
 				        $('#joincampaignmodal').modal('show');
 				    })
 			}
+			$(document).ready(function($) {
+				if ($('#notificationMessages').text().length > 0){
+					$.notify($('#notificationMessages').text(), "success");
+				}
+			});
 		</script>
+		{% block extrajs %}
 		{% endblock extrajs %}
 	</body>
 </html>
