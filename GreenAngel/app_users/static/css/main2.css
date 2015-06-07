@@ -465,7 +465,7 @@ aside#sidebar {
   top: 0;
   width: 220px;
   height: 100%;
-  background: #16831B;
+  background: #478AC2;
   -webkit-box-shadow: inset -6px 0px 6px -6px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: inset -6px 0px 6px -6px rgba(0, 0, 0, 0.25);
   box-shadow: inset -6px 0px 6px -6px rgba(0, 0, 0, 0.25); }
@@ -660,7 +660,7 @@ ul#left-nav {
 
 .top-bar {
   height: 50px;
-  background: #16831B;
+  background: #275E7F;
   line-height: 50px;
   padding: 0 20px;
   margin-bottom: 10px;
@@ -721,13 +721,13 @@ footer {
     color: #f56b6b; }
 
 .daily-stats h1.number {
-  text-align: right;
-  color: #53acdf;
-  font-weight: 700;
+  text-align: center;
+  color: white;
+  font-weight: bold;
   letter-spacing: 1px;
   margin: 0; }
   .daily-stats h1.number span {
-    color: #e6e6e6; }
+    color: white; }
   .daily-stats h1.number sup {
     font-size: 21px;
     font-weight: 600; }
@@ -1410,7 +1410,7 @@ ul.stats-widget {
 
 .alert-info {
   color: black;
-  background-color: rgb(202, 225, 239);
+  background-color: rgb(182, 200, 215);
   border-color: rgb(97, 133, 148); }
 
 .alert-warning {
@@ -1478,7 +1478,7 @@ blockquote {
   border: none;
   border-bottom: 0;
   border-bottom: 1px solid #cae1ef !important;
-  background: rgb(22, 131, 27) !important;
+  background: rgb(39, 94, 127) !important;
   color: white !important;
 /*  background: linear-gradient(#fdfefe, #f5f9fc);
   -webkit-border-radius: 0px;
@@ -1524,7 +1524,7 @@ blockquote {
   background-color: #f5f9fc;
   border-bottom: 1px solid #e2eef6;
   font-size: 16px;
-  text-align: right; }
+  text-align: left; }
   .panel-sub-heading a {
     color: #4697c6; }
     .panel-sub-heading a:hover {
