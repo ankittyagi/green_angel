@@ -25,6 +25,97 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
+
+
+
+  <!-- google map -->
+  <style>
+      #map-canvas {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+var map; //<-- This is now available to both event listeners and the initialize() function
+function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(21.145800, 79.088155),
+          zoom: 5,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+  map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(28.459497, 77.026638),
+    map: map,
+    title:"Gurgaon"
+});
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(26.846694, 80.946166),
+    map: map,
+    title:"Lucknow"
+});
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(23.022505, 72.571362),
+    map: map,
+    title:"Ahmedabad"
+});
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(30.733315, 76.779418),
+    map: map,
+    title:"Chandigarh"
+});
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(20.296059, 85.824540),
+    map: map,
+    title:"Bhubhneshwar"
+});
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(18.520430, 73.856744),
+    map: map,
+    title:"Pune"
+});
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(11.410000, 76.700000),
+    map: map,
+    title:"Ooty"
+});
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(24.820000, 93.950000),
+    map: map,
+    title:"Imphal"
+});
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(12.914142, 74.855957),
+    map: map,
+    title:"Mangalore"
+});
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(21.145800, 79.088155),
+    map: map,
+    title:"Nagpur"
+});
+
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, "resize", function() {
+ var center = map.getCenter();
+ google.maps.event.trigger(map, "resize");
+ map.setCenter(center); 
+});
+
+    </script>
 </head>
 <body>
   <!-- Header Section Start -->
@@ -42,7 +133,7 @@
             <span class="scroll">
               <a href="#works" class="btn btn-common lg wow fadeInLeft animated" data-wow-delay="1.0s">How It Works</a>
             </span>
-            <a href="/login" class="btn btn-common lg wow fadeInRight animated" data-wow-delay="1.0s">Participate</a>
+            <a href="login" class="btn btn-common lg wow fadeInRight animated" data-wow-delay="1.0s">Participate</a>
             <div class="scroll">
               <a href="#works"><i class="fa fa-angle-down wow fadeInUp animated" data-wow-delay="1.2s"></i></a>
           </div>
@@ -97,6 +188,23 @@
               </blockquote>
     
           </div>
+<!--           <div class="grid-box large">
+            <img src="{{STATIC_URL}}img/work/img4.jpg" alt="">
+            <div class="overlay">
+               <a href="{{STATIC_URL}}img/work/img4.jpg" data-lightbox="img4"><i class="fa fa-search"></i></a>
+            </div>
+          </div>
+          <div class="grid-box">
+            <img src="{{STATIC_URL}}img/work/img5.jpg" alt="">
+            <div class="overlay">
+               <a href="{{STATIC_URL}}img/work/img5.jpg" data-lightbox="img5"><i class="fa fa-search"></i></a>
+            </div>
+          </div> -->
+<!--           <div class="browse-box">
+            <div class="more">
+              <a href="#"><i class="fa fa-arrow-circle-right"></i>BROWSE ALL</a>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -113,6 +221,9 @@
             <li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
             <li data-target="#testimonial-carousel" data-slide-to="1"></li>
             <li data-target="#testimonial-carousel" data-slide-to="2"></li>
+            <li data-target="#testimonial-carousel" data-slide-to="3"></li>
+            <li data-target="#testimonial-carousel" data-slide-to="4"></li>
+            <li data-target="#testimonial-carousel" data-slide-to="5"></li>
           </ol>
           <div class="carousel-inner">
             <div class="item active">
@@ -152,6 +263,7 @@
                 </div>
               </blockquote>
             </div>
+
             <div class="item">
               <blockquote>
                 <div class="commant">
@@ -170,6 +282,63 @@
                 </div>
               </blockquote>
             </div>
+            <div class="item">
+              <blockquote>
+                <div class="commant">
+                  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                    <div class="claint">
+                      <img src="{{STATIC_URL}}img/testimonial/img4.jpg" alt="">
+                    </div>
+                    <span class="quote"><i class="fa fa-quote-left"></i></span>
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                    <div class="info">
+                      <p>God has cared for these trees, saved them from drought, disease, avalanches, and a thousand tempests and floods. But he cannot save them from fools.</p>
+                      <h4>John Muir</h4>
+                    </div>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+            <div class="item">
+              <blockquote>
+                <div class="commant">
+                  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                    <div class="claint">
+                      <img src="{{STATIC_URL}}img/testimonial/img5.jpg" alt="">
+                    </div>
+                    <span class="quote"><i class="fa fa-quote-left"></i></span>
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                    <div class="info">
+                      <p>God has cared for these trees, saved them from drought, disease, avalanches, and a thousand tempests and floods. But he cannot save them from fools.</p>
+                      <h4>John Muir</h4>
+                    </div>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+            <div class="item">
+              <blockquote>
+                <div class="commant">
+                  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                    <div class="claint">
+                      <img src="{{STATIC_URL}}img/testimonial/img6.jpg" alt="">
+                    </div>
+                    <span class="quote"><i class="fa fa-quote-left"></i></span>
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                    <div class="info">
+                      <p>God has cared for these trees, saved them from drought, disease, avalanches, and a thousand tempests and floods. But he cannot save them from fools.</p>
+                      <h4>John Muir</h4>
+                    </div>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+
+
+
           </div>
         </div>
       </div>
@@ -182,22 +351,25 @@
         <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s">Recently Planted <br><span>Trees</span></h1>
         <div id="clients-carousel" class="owl-carousel owl-theme">
           <div class="item wow fadeInLeft animated" data-wow-delay=".9s">
-            <a href="#"><img src="{{STATIC_URL}}img/clients/img1.png" alt=""></a>
+            <a href="{{STATIC_URL}}img/clients/img1.png" data-lightbox="img4"><img src="{{STATIC_URL}}img/clients/img1.png" alt=""></a>
           </div>
           <div class="item wow fadeInLeft animated" data-wow-delay=".9s">
-            <a href="#"><img src="{{STATIC_URL}}img/clients/img2.png" alt=""></a>
+            <a href="{{STATIC_URL}}img/clients/img2.png" data-lightbox="img5"><img src="{{STATIC_URL}}img/clients/img2.png" alt=""></a>
           </div>
           <div class="item wow fadeInRight animated" data-wow-delay=".9s">
-            <a href="#"><img src="{{STATIC_URL}}img/clients/img3.png" alt=""></a>
+            <a href="{{STATIC_URL}}img/clients/img3.png" data-lightbox="img6"><img src="{{STATIC_URL}}img/clients/img3.png" alt=""></a>
           </div>
           <div class="item wow fadeInRight animated" data-wow-delay=".9s">
-            <a href="#"><img src="{{STATIC_URL}}img/clients/img4.png" alt=""></a>
+            <a href="{{STATIC_URL}}img/clients/img4.png" data-lightbox="img7"><img src="{{STATIC_URL}}img/clients/img4.png" alt=""></a>
           </div>
           <div class="item wow fadeIn animated">
-            <a href="#"><img src="{{STATIC_URL}}img/clients/img5.png" alt=""></a>
+            <a href="{{STATIC_URL}}img/clients/img5.png" data-lightbox="img8"><img src="{{STATIC_URL}}img/clients/img5.png" alt=""></a>
           </div>
           <div class="item wow fadeIn animated">
-            <a href="#"><img src="{{STATIC_URL}}img/clients/img6.png" alt=""></a>
+            <a href="{{STATIC_URL}}img/clients/img6.png" data-lightbox="img9"><img src="{{STATIC_URL}}img/clients/img6.png" alt=""></a>
+          </div>
+          <div class="item wow fadeIn animated">
+            <a href="{{STATIC_URL}}img/clients/img7.png" data-lightbox="img10"><img src="{{STATIC_URL}}img/clients/img7.png" alt=""></a>
           </div>
         </div>
       </div>
@@ -254,11 +426,18 @@
     </div>
   </section> -->
   <!-- Blog Section Start -->
-<!--   <section id="blog">
+  <section id="blog">
     <div class="container">
       <div class="row">
-        <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s">Our work <span>showcase</span></h1>
-        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
+        <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s">Currenlty running <span>Drives</span></h1>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="blog-large wow fadeInLeft animated"  data-wow-delay="1.2s">
+            <div id="map-canvas"></div>
+          </div>
+        </div>
+
+        <!-- <div class="col-lg-4 col-md-4 col-sm-8 col-xs-12">
           <div class="blog-large wow fadeInLeft animated"  data-wow-delay="1.2s">
             <img src="{{STATIC_URL}}img/blog/img1.jpg" alt="">
             <div class="large">
@@ -299,9 +478,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
-  </section> -->
+  </section>
   <!-- Blog Section Start -->
 
   <!-- Feedback Section Start -->
@@ -361,6 +540,7 @@
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
           <div class="copyright wow fadeInUp animated" data-wow-delay=".8s">
             <p>Copyright &copy; 2015 Nagarro Software | All rights reserved.</p>
+            <small>*The data shown here is for demonstration purpose only.</small>
           </div>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
