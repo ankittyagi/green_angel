@@ -14,7 +14,7 @@ class CampaignAdmin(admin.ModelAdmin):
     list_display = ('name', 'start_at', 'end_at', 'user',
                     'created_at', 'updated_at')
     fieldsets = [
-        (None, {'fields': ['name', 'description', 'user']}),
+        (None, {'fields': ['name', 'description', 'user', 'photo']}),
         ("Start & End", {'fields': ['start_at', 'end_at']}),
     ]
     inlines = [CampaignZoneInLine]

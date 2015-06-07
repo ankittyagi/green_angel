@@ -61,7 +61,7 @@
 	    </div>
 	    <div class="panel-body">
 	        <div class="col-md-6 col-xs-6 col-sm-6">
-	        	<img src="{{STATIC_URL}}img/work/img2.png" style="width:47%">
+	        	<img src="{% if campaign.photo.name == False %}{{MEDIA_URL}}{{campaign.photo}}{% else %}{{STATIC_URL}}img/clients/campaign-default.png{% endif %}" style="width:120px">
 	        </div>
 	    	<div class="col-md-6 col-xs-6 col-sm-6">
 		        {% for loc in campaign.zones.all %}
