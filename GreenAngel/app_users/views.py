@@ -201,3 +201,27 @@ def redeem(request):
         user=request.user, status='approve'
     ).aggregate(Sum('points'))['points__sum'] or 0
     return render(request, 'app_users/redeem.html', locals())
+
+
+@login_required
+def mycampaignstat(request):
+    """
+    mycampaignstat view
+      var data = [
+            { label: "IE",  data: 19.5},
+            { label: "Safari",  data: 4.5},
+            { label: "Firefox",  data: 36.6},
+            { label: "Opera",  data: 2.3},
+            { label: "Chrome",  data: 36.3},
+            { label: "Other",  data: 0.8}
+        ];
+    """
+    res = []
+    mycampaigns__ids = request.user.profile.zones.values_list(
+        'campaign__id', flat=True).distinct().all()
+    for cam in Campaign.objects.filter(
+            id__in=mycampaigns__ids).order_by('-start_at'):
+        con = Plantation.objects.filter(
+            user=request.user, zone__campaign=cam).count()
+        res.append({'label': cam.name[:5] + '..', "data": con})
+    return HttpResponse(json.dumps(res), content_type='application/json')
