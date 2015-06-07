@@ -16,7 +16,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.views.generic.edit import UpdateView
 from .forms import (
     LoginForm, JoinCampaignForm, AddPlantationForm)
-
+from django.db.models import Sum
 from django.utils import timezone
 from .models import Campaign, CampaignZone, Plantation
 from datetime import datetime
@@ -173,4 +173,18 @@ def mypoints(request):
     myplantation view
     """
     pts = Plantation.objects.filter(user=request.user).order_by('-id')
+    ppts = Plantation.objects.filter(
+        user=request.user, status='draft'
+    ).aggregate(Sum('points'))['points__sum']
+    apts = Plantation.objects.filter(
+        user=request.user, status='approve'
+    ).aggregate(Sum('points'))['points__sum']
     return render(request, 'app_users/mypoints.html', locals())
+
+
+@login_required
+def redeem(request):
+    """
+    redeem view
+    """
+    return render(request, 'app_users/redeem.html', locals())
