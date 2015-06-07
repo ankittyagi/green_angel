@@ -243,6 +243,9 @@ img {
   background-image: url(../img/work/egg_shell.jpg);
   width: 100%;
 }
+#blog{
+  background-image: url(assets/img/work/egg_shell.jpg);
+}
 #works .grid-left .large {
   float: left;
   width: 430px;

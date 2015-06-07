@@ -741,6 +741,7 @@ footer {
   text-align: right;
   list-style-type: none;
   margin: 0;
+  font-size: 20px;
   padding: 0; }
   .daily-stats ul.details li {
     width: 33%;
