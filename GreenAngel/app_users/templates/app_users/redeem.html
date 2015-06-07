@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}My Planations{% endblock title %}
-{% block breadcrumb %}My Planations{% endblock breadcrumb %}
+{% block title %}Redeem{% endblock title %}
+{% block breadcrumb %}Redeem{% endblock breadcrumb %}
 
 {% block nav %}
 <li>
@@ -21,7 +21,7 @@
 		<span>My Campaigns</span>
 	</a>
 </li>
-<li class='highlight'>
+<li>
 	<a href='/myplantation'>
 		<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
 		<span>My Plantation</span>
@@ -33,7 +33,7 @@
 		<span>My Points</span>
 	</a>
 </li>
-<li>
+<li class='highlight'>
 	<a href='/redeem'>
 		<div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
 		<span>Redeem</span>
@@ -48,46 +48,9 @@
 </li>
 {% endblock nav %}
 {% block body %}
-
+<!-- Row start -->
 <div class="row no-gutter">
-	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h4>My contribution to Green Earth.</h4>
-			</div>
-			<div class="panel-body">
-				<div class="table-responsive">
-					<table class="table table -bordered no-margin">
-						<thead>
-							<tr>
-								<th width="20%">
-									Campaign
-								</th>
-								<th width="20%">
-									Zone
-								</th>
-								<th width="40%">
-									&nbsp;
-								</th>
-								<th width="20%">
-									&nbsp;
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							{% for mp in mps%}
-							<tr>
-								<td>{{mp.zone.campaign.name}}</td>
-								<td>{{mp.zone.name}}</td>
-								<td><img src="{{MEDIA_URL}}{{mp.photo}}" style="width:100px;"></td>
-								<td>{{mp.created_at}}</td>
-							</tr>
-							{% endfor %}
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
+<!-- Row end -->
+
 {% endblock body %}

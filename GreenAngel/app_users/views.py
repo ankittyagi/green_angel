@@ -179,5 +179,12 @@ def mypoints(request):
     apts = Plantation.objects.filter(
         user=request.user, status='approve'
     ).aggregate(Sum('points'))['points__sum']
-    print ppts, apts
     return render(request, 'app_users/mypoints.html', locals())
+
+
+@login_required
+def redeem(request):
+    """
+    redeem view
+    """
+    return render(request, 'app_users/redeem.html', locals())
