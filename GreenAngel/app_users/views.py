@@ -179,6 +179,8 @@ def mypoints(request):
     apts = Plantation.objects.filter(
         user=request.user, status='approve'
     ).aggregate(Sum('points'))['points__sum']
+    if not apts:
+        apts = 0
     return render(request, 'app_users/mypoints.html', locals())
 
 
@@ -187,4 +189,9 @@ def redeem(request):
     """
     redeem view
     """
+    apts = Plantation.objects.filter(
+        user=request.user, status='approve'
+    ).aggregate(Sum('points'))['points__sum']
+    if not apts:
+        apts = 0
     return render(request, 'app_users/redeem.html', locals())
