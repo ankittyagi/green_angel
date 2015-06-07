@@ -715,8 +715,9 @@ footer {
   line-height: 60px;
   text-align: left;
   font-size: 11px;
+  margin-left: 229px;
   width: 100%;
-  padding: 0 20px; }
+  padding: 0px 0px 20px}
   footer span {
     color: #f56b6b; }
 

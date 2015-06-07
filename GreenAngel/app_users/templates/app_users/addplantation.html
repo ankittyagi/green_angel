@@ -42,6 +42,7 @@
 	                if (data.success) {
 	                    $("#imgUploadStatus").text('');
 	                    $('#joincampaignmodal').modal('hide');
+	                    location.reload();
 	                } else {
 	                    $("#imgUploadStatus").text(data.message);
 	                }
